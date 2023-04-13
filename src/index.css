@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.display-list {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.h-17 {
+  height: 68px;
+}
+.w-17 {
+  width: 68px;
+}
