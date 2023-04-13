@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/PRIYAANK2510/React-Dictionary
+- Live Site URL: https://react-dictionary-vert.vercel.app/
 
 ## My process
 
