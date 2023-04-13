@@ -1,8 +1,12 @@
 import { BiMoon } from "react-icons/bi";
 import Switch from "react-switch";
-const Header = ({ dark, handleDark, setFont }) => {
+const Header = ({ dark, handleDark, setFont, setData, setWord }) => {
   const handleFont = (e) => {
     setFont(e.target.value);
+  };
+  const homePage = () => {
+    setData([]);
+    setWord(null);
   };
   return (
     <nav
@@ -10,7 +14,7 @@ const Header = ({ dark, handleDark, setFont }) => {
         dark ? "bg-black" : "bg-light-100"
       }`}
     >
-      <img src="logo.svg" alt="logo" />
+      <img className="hover:cursor-pointer" src="logo.svg" alt="logo" onClick={homePage} />
       <div className="flex items-center gap-4">
         <label htmlFor="select-font" className="hidden">
           Select-Font

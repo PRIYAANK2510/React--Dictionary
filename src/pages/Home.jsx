@@ -49,7 +49,13 @@ const Home = ({ dark, setDark, setFont }) => {
   };
   return (
     <>
-      <Header dark={dark} handleDark={handleDark} setFont={setFont} />
+      <Header
+        dark={dark}
+        handleDark={handleDark}
+        setFont={setFont}
+        setData={setData}
+        setWord={setWord}
+      />
       <SearchBar search={search} setSearch={setSearch} handleSearch={handleSearch} dark={dark} />
       {data.length === 0 && <StartingPage dark={dark} />}
       {fetchError && data.length !== 0 && <ErrorPage dark={dark} />}
