@@ -26,13 +26,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./Screenshot1.jpeg)
-![](./Screenshot2.jpeg)
+![Screenshot Dark Mode](https://raw.githubusercontent.com/PRIYAANK2510/React-Dictionary/main/Screenshot1.jpeg)
+![Screenshot Light Mode](https://raw.githubusercontent.com/PRIYAANK2510/React-Dictionary/main/Screenshot2.jpeg)
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/PRIYAANK2510/React-Dictionary
+- Live Site URL: https://react-dictionary-vert.vercel.app/
 
 ## My process
 
