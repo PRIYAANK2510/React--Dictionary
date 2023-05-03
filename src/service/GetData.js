@@ -1,4 +1,4 @@
-const outputData = (data) => {
+export const outputData = (data) => {
   const processedData = {
     word: null,
     phonetic: null,
@@ -34,5 +34,3 @@ const outputData = (data) => {
   }
   return processedData;
 };
-
-export default outputData;

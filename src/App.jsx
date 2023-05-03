@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Home from "./pages/Home";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div
-      id="App"
+      id='App'
       className={`
                   ${dark ? "bg-black" : "bg-white"} 
                   min-h-screen 

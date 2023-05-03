@@ -1,26 +1,28 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import Header from "../components/Header";
+import Header from '../components/Header';
 
-import ErrorPage from "../components/ErrorPage";
-import OutputContainer from "../components/OutputContainer";
-import SearchBar from "../components/SearchBar";
-import StartingPage from "../components/StartingPage";
-import outputData from "../service/GetData";
+import ErrorPage from '../components/ErrorPage';
+import OutputContainer from '../components/OutputContainer';
+import SearchBar from '../components/SearchBar';
+import StartingPage from '../components/StartingPage';
+import { outputData } from '../service/GetData';
 
 const Home = ({ dark, setDark, setFont }) => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [word, setWord] = useState(null);
   const [data, setData] = useState([]);
   const [fetchError, setFetchError] = useState(null);
-  const API_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+  const API_URL = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
 
   useEffect(() => {
     const fetchData = async (word) => {
       try {
         const response = await fetch(`${API_URL}${word}`);
         if (!response.ok)
-          throw Error("Sorry pal, we couldn't find definitions for the word you were looking for.");
+          throw Error(
+            "Sorry pal, we couldn't find definitions for the word you were looking for."
+          );
 
         const val = await response.json();
         const output = outputData(val);
@@ -37,7 +39,7 @@ const Home = ({ dark, setDark, setFont }) => {
   //Dark Mode
   const handleDark = (val) => {
     setDark(val);
-    localStorage.setItem("dark", val);
+    localStorage.setItem('dark', val);
   };
 
   //Handling Search
@@ -45,7 +47,7 @@ const Home = ({ dark, setDark, setFont }) => {
     e.preventDefault();
     if (!search) return;
     setWord(search);
-    setSearch("");
+    setSearch('');
   };
   return (
     <>
@@ -56,11 +58,20 @@ const Home = ({ dark, setDark, setFont }) => {
         setData={setData}
         setWord={setWord}
       />
-      <SearchBar search={search} setSearch={setSearch} handleSearch={handleSearch} dark={dark} />
+      <SearchBar
+        search={search}
+        setSearch={setSearch}
+        handleSearch={handleSearch}
+        dark={dark}
+      />
       {data.length === 0 && <StartingPage dark={dark} />}
       {fetchError && data.length !== 0 && <ErrorPage dark={dark} />}
       {!fetchError && data.length !== 0 && (
-        <OutputContainer data={data} setWord={setWord} dark={dark} />
+        <OutputContainer
+          data={data}
+          setWord={setWord}
+          dark={dark}
+        />
       )}
     </>
   );
